@@ -26,7 +26,7 @@ function GalleryItem({ Data, refInfo, isLast }) {
           ></img>
           <div className="flex flex-col">
             <span>{Data.user.first_name + " " + Data.user.last_name}</span>
-            <span className="font-normal  w-full text-gray-400">
+            <span className="font-normal sm:w-full w-[100px] overflow-hidden   text-gray-400">
               {"@" +
                 (Data.user.social.instagram_username
                   ? Data.user.social.instagram_username

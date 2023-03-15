@@ -33,7 +33,7 @@ function Popup() {
         setShow(false);
         setScroll(true);
       }}
-      className="fixed overflow-auto p-6 backdrop-blur-sm top-0 left-0 z-20 w-full h-full bg-black/60 flex sm:items-center justify-center"
+      className="fixed overflow-auto p-6 backdrop-blur-sm top-0 left-0 z-20 w-full h-full bg-black/60 flex items-center justify-center"
     >
       <div
         onClick={(e) => {
@@ -54,7 +54,7 @@ function Popup() {
               onClick={() => {
                 download(data.urls.full);
               }}
-              className="bg-green-500 px-6 rounded-sm flex gap-1 items-center  py-3"
+              className="bg-green-500 px-6 rounded-sm flex gap-2 items-center  py-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,9 +102,9 @@ function Popup() {
               className="w-10 h-10 rounded-full "
               src={data.user.profile_image.large}
             ></img>
-            <div>
+            <div className="flex flex-col ">
               <div>{data.user.first_name + " " + data.user.last_name}</div>
-              <span className="font-normal  w-full text-gray-400">
+              <span className="font-normal sm:w-full w-[100px] overflow-hidden text-gray-400">
                 {"@" +
                   (data.user.social.instagram_username
                     ? data.user.social.instagram_username
