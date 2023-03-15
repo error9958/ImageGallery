@@ -55,7 +55,7 @@ function useFetchImage() {
     fetchData();
   }, [pageNumber, query]);
 
-  return { list, pageNumber, setPageNumber, setQuery, loading, error, hasMore };
+  return { list, pageNumber, setPageNumber, setQuery, loading, error, hasMore ,query};
 }
 
 export default useFetchImage;

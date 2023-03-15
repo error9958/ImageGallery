@@ -4,7 +4,8 @@ import GalleryItem from "./GalleryItem";
 import { MoonLoader } from "react-spinners";
 
 function Gallery() {
-  const { list, setPageNumber, loading, error,hasMore } = useFetchImage();
+  const { list, setPageNumber, loading, error, hasMore, query } =
+    useFetchImage();
   const observer = useRef();
   const lastItemRef = useCallback(
     (node) => {
@@ -24,7 +25,7 @@ function Gallery() {
         observer.current.observe(node);
       }
     },
-    [loading,hasMore]
+    [loading, hasMore]
   );
 
   return (
@@ -44,7 +45,8 @@ function Gallery() {
           return <GalleryItem key={index} Data={e} />;
         })}
       </div>
-      {list.length == 0 && (
+      
+      {list.length == 0 && query && (
         <div className="w-full text-center text-red-400 text-xl sm:text-4xl lg:text-6xl font-bold">
           Result Not Found !
         </div>
